@@ -1,0 +1,33 @@
+# Build caches and generated outputs
+.gradle/
+build/
+!**/src/**/build/
+
+# Local game instances, logs and crash reports
+run/
+runs/
+!**/src/**/run/
+logs/
+crash-reports/
+*.log
+hs_err_pid*
+replay_pid*
+
+# Local editor settings
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Machine-specific settings and secrets
+.env
+.env.*
+!.env.example
+*.local.properties
+
+# Downloaded distributions and compiled binaries
+gradle-*-bin.zip
+gradle-*-all.zip
+*.jar
+!**/gradle/wrapper/gradle-wrapper.jar
