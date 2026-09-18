@@ -26,6 +26,9 @@ Thumbs.db
 !.env.example
 *.local.properties
 
+# Local copyrighted research notes (not part of the public repository)
+/docs/22条序列原书设定/
+
 # Downloaded distributions and compiled binaries
 gradle-*-bin.zip
 gradle-*-all.zip
