@@ -1,5 +1,7 @@
 package io.github.crossacid.whisperway;
 
+import io.github.crossacid.whisperway.data.ModAttachments;
+
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -12,6 +14,7 @@ public final class Whisperway {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public Whisperway(IEventBus modEventBus, ModContainer modContainer) {
+        ModAttachments.register(modEventBus);
         LOGGER.info("Whisperway initialized");
     }
 }
