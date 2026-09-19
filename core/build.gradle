@@ -88,6 +88,10 @@ neoForge {
             // "SCAN": For mods scan.
             // "REGISTRIES": For firing of registry events.
             // "REGISTRYDUMP": For getting the contents of all registries.
+            jvmArgument '-Dfile.encoding=UTF-8'
+            jvmArgument '-Dstdout.encoding=UTF-8'
+            jvmArgument '-Dstderr.encoding=UTF-8'
+
             systemProperty 'forge.logging.markers', 'REGISTRIES'
 
             // Recommended logging level for the console
