@@ -1,6 +1,7 @@
 package io.github.crossacid.whisperway.data;
 
 import io.github.crossacid.whisperway.Whisperway;
+import io.github.crossacid.whisperway.pathway.ironguard.IronGuardCombatState;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -20,7 +21,6 @@ public final class ModAttachments {
      * 玩家永久保存的途径进度。
      *
      * serialize：使用 PathwayProgress.CODEC 保存到玩家存档。
-     * 
      * copyOnDeath：玩家死亡后保留途径、序列和消化度。
      */
     public static final Supplier<AttachmentType<PathwayProgress>> PATHWAY_PROGRESS = ATTACHMENT_TYPES.register(
@@ -30,6 +30,19 @@ public final class ModAttachments {
                     .serialize(PathwayProgress.CODEC)
                     .copyOnDeath()
                     .build());
+
+    /**
+     * 铁卫当前战斗中的临时状态。
+     *
+     * 没有调用 serialize，因此不会写入玩家存档。
+     * 没有调用 copyOnDeath，因此玩家死亡后不会保留战势。
+     */
+    public static final Supplier<AttachmentType<IronGuardCombatState>> IRON_GUARD_COMBAT_STATE = ATTACHMENT_TYPES
+            .register(
+                    "iron_guard_combat_state",
+                    () -> AttachmentType
+                            .builder(() -> IronGuardCombatState.EMPTY)
+                            .build());
 
     private ModAttachments() {
     }
